@@ -1,6 +1,7 @@
 package org.launchcode.javawebdevtechjobspersistent.controllers;
 
 
+
 import org.launchcode.javawebdevtechjobspersistent.models.Skill;
 import org.launchcode.javawebdevtechjobspersistent.models.data.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 import javax.validation.Valid;
 import java.util.Optional;
@@ -46,7 +49,7 @@ public class SkillsController {
             }
         }
 
-        @GetMapping("view/{skillsId}")
+        @GetMapping("view/{skillId}")
         public String displayViewSkills(Model model, @PathVariable int skillId) {
 
             Optional optSkill = skillRepository.findById(skillId);
